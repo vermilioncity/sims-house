@@ -1,2 +1,2 @@
 # sims-house
-flask web app for hosting photos from the Sims 4
+Downloads pictures and descriptions from Facebook, manipulates them with Pillow, and reuploads to Google Drive.

@@ -102,3 +102,11 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# sensitive stuff
+credentials.json
+token.pickle
+
+# crap
+.vscode/
+.DS_STORE
