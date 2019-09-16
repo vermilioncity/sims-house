@@ -1,14 +1,12 @@
 import os
-import facebook
 from multiprocessing.pool import Pool
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
-import itertools
+
+import facebook
+from googleapiclient.discovery import build
 
 from sims_house.fb_api import fetch_image_metadata, stream_image
+from sims_house.gdrive import get_creds, get_parent_folder_id, upload_image
 from sims_house.images import prepare_image
-from sims_house.gdrive import upload_image, get_parent_folder_id, get_creds
-from googleapiclient.discovery import build
 
 
 def upload_images(drive, folder_id, image_id, text, link):
@@ -29,6 +27,6 @@ if __name__ == "__main__":
     folder_id = get_parent_folder_id(drive_service)
 
     images = _combine(drive_service, folder_id, images)
-    
+
     with Pool() as pool:
         pool.starmap(upload_images, images)

@@ -1,11 +1,11 @@
-from googleapiclient.http import MediaIoBaseUpload
-import pickle
 import os.path
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
-import googleapiclient
+import pickle
 from time import sleep
 
+import googleapiclient
+from google.auth.transport.requests import Request
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.http import MediaIoBaseUpload
 
 SCOPES = ['https://www.googleapis.com/auth/drive']
 
